@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Obsidian Ledger Viewer
+   Color palette follows VSCode's default Dark+ / Light+ themes; the syntax
+   scopes are those of the VSCode extension "vscode-ledger".
+   ========================================================================== */
+
+.obsidian-ledger-view {
+  /* VSCode Dark+ palette */
+  --olv-comment: #6a9955;      /* comment              */
+  --olv-date: #ce9178;         /* string.other.date    */
+  --olv-amount: #b5cea8;       /* constant.numeric     */
+  --olv-currency: var(--text-normal); /* constant.other */
+  --olv-keyword: #569cd6;      /* keyword / keyword.other */
+  --olv-kw-control: #c586c0;   /* keyword.control      */
+  --olv-variable: #9cdcfe;     /* variable.other       */
+  --olv-regexp: #d16969;       /* string.regexp        */
+  --olv-account: var(--text-normal); /* markup.bold.account */
+
+  display: flex;
+  flex-direction: column;
+}
+
+body.theme-light .obsidian-ledger-view {
+  /* VSCode Light+ palette */
+  --olv-comment: #008000;
+  --olv-date: #a31515;
+  --olv-amount: #098658;
+  --olv-keyword: #0000ff;
+  --olv-kw-control: #af00db;
+  --olv-variable: #001080;
+  --olv-regexp: #811f3f;
+}
+
+/* --- editor chrome -------------------------------------------------------- */
+
+.obsidian-ledger-view .olv-editor {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.obsidian-ledger-view .cm-editor {
+  height: 100%;
+  background: transparent;
+}
+
+.obsidian-ledger-view .cm-editor.cm-focused {
+  outline: none;
+}
+
+.obsidian-ledger-view .cm-scroller {
+  font-family: var(--font-monospace);
+  line-height: 1.6;
+}
+
+.obsidian-ledger-view .cm-content {
+  caret-color: var(--text-normal);
+  padding-bottom: 30vh;
+}
+
+.obsidian-ledger-view .cm-gutters {
+  background: transparent;
+  border-right: 1px solid var(--background-modifier-border);
+  color: var(--text-faint);
+}
+
+.obsidian-ledger-view .cm-activeLine {
+  background: var(--background-modifier-hover);
+}
+
+.obsidian-ledger-view .cm-activeLineGutter {
+  background: transparent;
+  color: var(--text-normal);
+}
+
+.obsidian-ledger-view .cm-cursor,
+.obsidian-ledger-view .cm-dropCursor {
+  border-left-color: var(--text-normal);
+}
+
+.obsidian-ledger-view .cm-selectionBackground,
+.obsidian-ledger-view .cm-focused .cm-selectionBackground {
+  background-color: var(--text-selection);
+}
+
+/* --- token colors ---------------------------------------------------------- */
+
+.obsidian-ledger-view .cm-olg-comment {
+  color: var(--olv-comment);
+}
+
+.obsidian-ledger-view .cm-olg-date {
+  color: var(--olv-date);
+}
+
+.obsidian-ledger-view .cm-olg-amount {
+  color: var(--olv-amount);
+}
+
+.obsidian-ledger-view .cm-olg-currency {
+  color: var(--olv-currency);
+}
+
+.obsidian-ledger-view .cm-olg-keyword {
+  color: var(--olv-keyword);
+}
+
+.obsidian-ledger-view .cm-olg-keyword-control {
+  color: var(--olv-kw-control);
+}
+
+.obsidian-ledger-view .cm-olg-variable {
+  color: var(--olv-variable);
+}
+
+.obsidian-ledger-view .cm-olg-regexp {
+  color: var(--olv-regexp);
+}
+
+.obsidian-ledger-view .cm-olg-account {
+  color: var(--olv-account);
+  font-weight: var(--font-bold, 700);
+}
+
+.obsidian-ledger-view .cm-olg-account-virtual {
+  color: var(--olv-account);
+  font-style: italic;
+}
+
+.obsidian-ledger-view .cm-olg-desc {
+  font-style: italic;
+}
+
+.obsidian-ledger-view .cm-olg-desc-pending {
+  text-decoration: underline;
+}

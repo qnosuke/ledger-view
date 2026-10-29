@@ -1,0 +1,60 @@
+; サンプル家計簿 — Ledger Viewer プラグインの動作確認用
+; 日付はオレンジ、金額は緑、勘定科目は太字で表示されます
+
+2024/04/01 * 初期残高の設定
+    Assets:Bank:ゆうちょ          100,000 JPY
+    Equity:開始残高               -100,000 JPY
+
+2024/04/03 ! スーパーで買い物
+    Expenses:食費:食材             3,480 JPY
+    Assets:Cash
+
+2024/04/05 コンビニでおやつ
+    Expenses:食費:おやつ             500 JPY
+    Assets:Cash                    -500 JPY
+
+2024/04/10 給与振込
+    Assets:Bank:ゆうちょ          250,000 JPY
+    Income:給与                  -250,000 JPY
+
+2024/04/15 * 家賃の支払い
+    Expenses:住居:家賃            80,000 JPY
+    Expenses:住居:管理費          10,000 JPY
+    Assets:Bank:ゆうちょ
+
+2024/05/01=2024/05/02 * 繰越
+    (Equity:仮想勘定)
+    [Assets:集計用]
+
+; ディレクティブ
+account Assets:Bank:ゆうちょ
+    alias ゆうちょ銀行
+
+commodity JPY
+    format 1,000 JPY
+
+payee スーパー
+    alias 業務スーパー
+
+P 2024/04/30 JPY 0.0067 USD
+
+Y 2024
+
+tag 病気
+
+include other.ledger
+
+= Expenses:食費 > 10000
+    warn 大きな食費です
+
+~ monthly
+    Expenses:食費               30,000 JPY
+    Assets:Cash
+
+# これはコメント行
+| これもコメント行
+
+comment
+ブロックコメントの中は
+すべて緑色になります
+end comment
