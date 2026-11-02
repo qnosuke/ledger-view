@@ -6,8 +6,4 @@ export default class LedgerPlugin extends Plugin {
     this.registerView(VIEW_TYPE_LEDGER, (leaf) => new LedgerView(leaf));
     this.registerExtensions(LEDGER_EXTENSIONS, VIEW_TYPE_LEDGER);
   }
-
-  onunload(): void {
-    this.app.workspace.detachLeavesOfType(VIEW_TYPE_LEDGER);
-  }
 }
