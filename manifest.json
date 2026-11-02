@@ -5,6 +5,6 @@
   "minAppVersion": "1.4.0",
   "description": "Open and edit Ledger CLI files (.ledger) with VSCode-style syntax highlighting.",
   "author": "qnosuke",
-  "authorUrl": "",
+  "authorUrl": "https://github.com/qnosuke",
   "isDesktopOnly": false
 }
